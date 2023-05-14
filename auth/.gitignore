@@ -19,13 +19,3 @@
 
 # Go workspace file
 go.work
-pck/*
-bin/*
-*/pck/*
-*/bin/*
-go.work
-go.work.sum
-config/*
-*/config/*
-!*/config/env.config.yaml
-!config/env.config.yaml

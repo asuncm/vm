@@ -1,0 +1,9 @@
+.idea
+.vscode
+config/*
+!config/env.config.yaml
+pkg
+bin
+go.sum
+go.work
+go.work.sum
