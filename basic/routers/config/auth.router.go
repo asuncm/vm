@@ -9,7 +9,7 @@ func AuthInit(route *gin.RouterGroup) {
 	// 获取身份令牌
 	route.GET("/verify", auth.Verify)
 	// 获取验证码
-	route.GET("/code", auth.Code)
+	route.GET("/code", auth.CodeVerify)
 	// 用户登录
 	route.POST("/login", auth.Login)
 	// 用户注册
@@ -23,5 +23,6 @@ func AuthInit(route *gin.RouterGroup) {
 }
 
 func CodeInit(route *gin.RouterGroup) {
-
+	// 生成用户uuid
+	route.GET("/auth", auth.CodeVerify)
 }

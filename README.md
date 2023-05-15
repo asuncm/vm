@@ -32,3 +32,29 @@ workflow    工作流相关文件修改
  mode=local
  配置文件：local.config.yaml
 ```
+
+#### API接口状态码
+
+```bash
+1. 项目API接口返回状态码，详情查询service模块README.md文件说明
+```
+
+#### 项目结构说明
+
+```bash
+|-config
+| |-env.config.yaml   环境配置文件示例
+| └─*.config.yaml     程序运行环境配置文件
+|-service 
+|-auth
+|-user
+|-authentication
+|-design
+|-doc
+|-flow
+|-form
+|-task
+|-web
+|-website
+|-teach
+```

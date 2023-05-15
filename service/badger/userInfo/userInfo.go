@@ -4,6 +4,8 @@ import (
 	"github.com/asuncm/vm/service/config"
 	"github.com/dgraph-io/badger/v4"
 	"log"
+	"regexp"
+	"runtime"
 	"strings"
 )
 
@@ -15,6 +17,11 @@ func Badger(options config.ComConf, config Authorization) (UserInfo, error) {
 		Origin: "*",
 	}
 	pathname := strings.Join([]string{options.DataDir, "badgerDB"}, "/")
+	platform := runtime.GOOS
+	reg, _ := regexp.MatchString("^window", platform)
+	if reg {
+		pathname = strings.Replace(pathname, "/", "\\", -1)
+	}
 	opts := badger.DefaultOptions(pathname)
 	// 设置badger缓存
 	opts.IndexCacheSize = 100 << 20

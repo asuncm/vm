@@ -29,3 +29,6 @@ config/*
 */config/*
 !*/config/env.config.yaml
 !config/env.config.yaml
+.idea/*
+.vscode/*
+.vs/*

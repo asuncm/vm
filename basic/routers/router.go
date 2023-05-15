@@ -44,11 +44,11 @@ func oerRouter(route *gin.Engine) {
 func authRouter(route *gin.Engine) {
 	auth := route.Group("/auth")
 	{
-		go config.AuthInit(auth)
+		config.AuthInit(auth)
 	}
 	code := route.Group("/code")
 	{
-		go config.CodeInit(code)
+		config.CodeInit(code)
 	}
 }
 

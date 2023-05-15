@@ -8,9 +8,9 @@ import (
 
 func main() {
 	router := gin.Default()
-	conf, err := config.Config()
+	conf, err := config.Config("/service")
 	if err != nil {
-		router.Run(":36002")
+		router.Run(":36003")
 	}
 	options := conf.Services
 	serve := options["service"]

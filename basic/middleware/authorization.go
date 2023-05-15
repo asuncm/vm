@@ -1,6 +1,7 @@
 package middleware
 
 import (
+	"github.com/asuncm/vm/service/badger"
 	"github.com/asuncm/vm/service/badger/userInfo"
 	"github.com/asuncm/vm/service/config"
 )
@@ -17,5 +18,6 @@ func origin(key string) string {
 // 生成临时用户签名
 func Authorization(options config.ComConf, config userInfo.Authorization) (userInfo.UserInfo, error) {
 	users, err := userInfo.Badger(options, config)
+	badger.Query("", "/basic")
 	return users, err
 }
