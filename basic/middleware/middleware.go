@@ -20,7 +20,7 @@ func Middleware(options config.ComConf) gin.HandlerFunc {
 			Verify: verify,
 			Origin: origin,
 		}
-		userInfo, _ := Authorization(options, config)
+		userInfo, _ := Authorization(config)
 		if method != "OPTIONS" && userInfo.Status {
 			// 设置接口跨域信息，订制域名限制
 			if userInfo.Status {
