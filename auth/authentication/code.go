@@ -7,6 +7,6 @@ import (
 )
 
 func GetUUID(c *gin.Context) {
-	id := config.AuthCode()
-	middleware.Json(c, id)
+	options := config.AuthCode()
+	middleware.Json(c, options.Id)
 }
